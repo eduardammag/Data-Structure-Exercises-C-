@@ -1,9 +1,11 @@
 #include <iostream>
+#include <vector>
 
 using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
+using std::vector;
 
 // QUESTÃO 1
 
@@ -40,8 +42,6 @@ float calcularRaizQuadrada(float& fNum) {
 
 
 //QUESTÃO 2
-
-using std::vector;
 
 int ifatorialIterativo(int inumero) {
   int iret = 1;
@@ -107,6 +107,13 @@ int icalcularSomaPA(int iprimeiroTermo, int irazao, int iquantidade) {
     }
 
     return isoma;
+}
+
+// Implementação da função com referências
+int icalcularSomaPA(const int& iprimeiroTermo, const int& irazao, const int& iquantidade) {
+    // Cálculo da soma da PA
+    int soma = ((2 * iprimeiroTermo) + ((iquantidade - 1) * irazao)) * iquantidade / 2;
+    return soma;
 }
 
 //////////////////////////////////////////////////////////////////////
