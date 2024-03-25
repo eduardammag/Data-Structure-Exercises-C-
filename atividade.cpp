@@ -142,4 +142,45 @@ long int licalcularFibonacci(const int& n) {
     return liTermoAtual;
 }
 
+///////////////////////////////////////////////
+
+QUESTÃO 5
+
+// Protótipo da função com nome consistente
+int calcularNumeroDigitos(const int& numero);
+
+int main() {
+    int iNumero;
+    cout << "Digite um número inteiro: ";
+    cin >> iNumero;
+
+    int iNumDigitos = calcularNumeroDigitos(iNumero);
+    cout << "O número de dígitos de " << iNumero << " é: " << iNumDigitos << endl;
+
+    return 0;
+}
+
+// Função para calcular o número de dígitos de um inteiro
+int calcularNumeroDigitos(const int& numero) {
     
+    if (numero == 0) {
+        return 1;
+    }
+    
+    int iContador = 0;
+    
+    int iNum = numero;
+    if (iNum < 0) {
+        iNum = -iNum;
+    }
+    
+    while (iNum != 0) {
+        iContador++;
+        iNum /= 10; 
+    }
+    
+    return iContador;
+}
+
+
+
