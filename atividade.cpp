@@ -7,29 +7,34 @@ using std::string;
 
 // QUESTÃO 1
 
-float raiz_quadrada(float num) {
-    float resultado = num / 2;
-    float temp;
-
-    do {
-        temp = resultado;
-        resultado = (temp + (num / temp)) / 2;
-    } while ((temp - resultado) != 0);
-
-    return resultado;
-}
+// Protótipo da função
+float calcularRaizQuadrada(float& num);
 
 int main() {
-    float numero;
+    float fNumero;
     cout << "Digite um número para calcular a raiz quadrada: ";
-    cin >> numero;
+    cin >> fNumero;
     
-    if (numero < 0) {
+    if (fNumero < 0) {
         cout << "Não é possível calcular a raiz quadrada de um número negativo." << endl;
     } else {
-        cout << "A raiz quadrada de " << numero << " é aproximadamente " << raiz_quadrada(numero) << endl;
+        cout << "A raiz quadrada de " << fNumero << " é aproximadamente " << calcularRaizQuadrada(fNumero) << endl;
     }
     
     return 0;
 }
+
+// Função para calcular a raiz quadrada
+float calcularRaizQuadrada(float& fNum) {
+    float fResultado = fNum / 2; // Aproximação inicial
+    float fTemp;
+
+    do {
+        fTemp = fResultado;
+        fResultado = (fTemp + (fNum / fTemp)) / 2;
+    } while ((fTemp - fResultado) != 0);
+
+    return fResultado;
+}
+
 
