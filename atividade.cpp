@@ -4,6 +4,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
+using std::vector;
 
 // QUESTÃO 1
 
@@ -38,3 +39,34 @@ float calcularRaizQuadrada(float& fNum) {
 }
 
 
+
+
+
+//QUESTÃO 2
+
+int ifatorialIterativo(int inumero) {
+  int iret = 1;
+  while (inumero > 1) iret *= inumero--;
+  return iret;
+}
+
+template <typename T>
+void printVector(vector<T> &vec) {
+  for (const auto &item : vec) {
+    cout << item << ", ";
+  }
+  cout << endl;
+}
+
+int main() {
+  vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+  printVector(vec);
+
+  for (const auto &item : vec) {
+    cout << ifatorialIterativo(item) << ", ";
+  }
+  cout << endl;
+
+  return 0;
+}
