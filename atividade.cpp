@@ -4,11 +4,9 @@ using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
-using std::vector;
 
 // QUESTÃO 1
 
-// Protótipo da função
 float calcularRaizQuadrada(float& num);
 
 int main() {
@@ -43,6 +41,8 @@ float calcularRaizQuadrada(float& fNum) {
 
 //QUESTÃO 2
 
+using std::vector;
+
 int ifatorialIterativo(int inumero) {
   int iret = 1;
   while (inumero > 1) iret *= inumero--;
@@ -75,7 +75,6 @@ int main() {
 
 // QUESTÃO 3
 
-// Protótipo da função
 int icalcularSomaPA(int iprimeiroTermo, int irazao, int iquantidade);
 
 int main() {
@@ -109,3 +108,38 @@ int icalcularSomaPA(int iprimeiroTermo, int irazao, int iquantidade) {
 
     return isoma;
 }
+
+//////////////////////////////////////////////////////////////////////
+
+//QUESTÃO 4
+
+long int licalcularFibonacci(const int& n);
+
+int main() {
+    int iPosicao;
+    
+    // Sequência fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55..
+    cout << "Escolha a posição: ";
+    cin >> iPosicao;
+    cout << "Posição " << iPosicao << " da sequência de Fibonacci: " << licalcularFibonacci(iPosicao) << endl;
+
+    return 0;
+}
+
+// Função para calcular o n-ésimo termo da sequência de Fibonacci
+long int licalcularFibonacci(const int& n) {
+    long int liTermoAnterior = 0, liTermoAtual = 1;
+
+    if (n == 0) return liTermoAnterior;
+    if (n == 1) return liTermoAtual;
+
+    for (int i = 2; i <= n; i++) {
+        long int liProximoTermo = liTermoAnterior + liTermoAtual;
+        liTermoAnterior = liTermoAtual;
+        liTermoAtual = liProximoTermo;
+    }
+    
+    return liTermoAtual;
+}
+
+    
