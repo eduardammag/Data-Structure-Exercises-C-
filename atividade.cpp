@@ -38,8 +38,7 @@ float calcularRaizQuadrada(float& fNum) {
     return fResultado;
 }
 
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //QUESTÃO 2
@@ -69,4 +68,44 @@ int main() {
   cout << endl;
 
   return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// QUESTÃO 3
+
+// Protótipo da função
+int icalcularSomaPA(int iprimeiroTermo, int irazao, int iquantidade);
+
+int main() {
+    int iprimeiroTermo, irazao, iquantidade;
+
+    cout << "Digite o primeiro termo da PA: ";
+    cin >> iprimeiroTermo;
+
+    cout << "Digite a razão da PA: ";
+    cin >> irazao;
+
+    cout << "Digite a quantidade de termos da PA: ";
+    cin >> iquantidade;
+
+    int iresultado = icalcularSomaPA(iprimeiroTermo, irazao, iquantidade);
+
+    cout << "A soma dos " << iquantidade << " termos da PA é: " << iresultado << endl;
+
+    return 0;
+}
+
+// Função para calcular a soma dos termos de uma PA
+int icalcularSomaPA(int iprimeiroTermo, int irazao, int iquantidade) {
+    int isoma = 0;
+    int itermoAtual = iprimeiroTermo;
+
+    for (int i = 0; i < iquantidade; i++) {
+        isoma += itermoAtual;
+        itermoAtual += irazao;
+    }
+
+    return isoma;
 }
